@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+    
+        function chamarPag(x) {
+           
+            switch (x) {
+                case 'ins':
+                    window.location.href = 'inserir.jsp';
+                    break;
+                case 'exb':
+                	document.getElementById("pag").value = x;
+                    document.getElementById(x).submit();
+                    break;
+                case 'exc':
+                	document.getElementById("pag").value = x;
+                	document.getElementById(x).submit();
+                    break;
+                case 'alt':
+                	document.getElementById("pag").value = x;
+                    document.getElementById(x).submit();
+                    break;
+                case 'pes':
+                	document.getElementById("pag").value = x;
+                    document.getElementById(x).submit();
+                    break;
+            }
+        }
+    </script>
+
+    <style>
+
+        .tamanho{
+            width: 600px;
+            margin: auto;
+            margin-top: 30px;
+            text-align: center;
+            background-color: #bbf2f2;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 5px 3px rgba(128, 128, 128, 0.65);
+        }
+        
+        h1 {
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 2px grey;
+        }
+        
+        form {
+            display: inline;
+        }
+        input[type=button] {
+            padding: 10px;
+            margin: 5px;
+            width: 100px;
+            border-radius: 20%;
+            background-color: azure;
+            box-shadow: 2px 2px 3px grey;
+            transition: 0.7s;
+        }
+        
+        input[type=button]:hover {
+            transform: scale(1.1);
+            background-color: lightgreen;
+        }
+    
+    </style>
+</head>
+
+<body>
+
+
+    <div class="tamanho">
+        <h1>PROVA 2</h1>
+
+        <form action="Exibir" method="get" id="exb">
+            <input type="button" value="Inserir" onclick="chamarPag('ins')">
+            <input type="button" value="Exibir" onclick="chamarPag('exb')">
+        </form>
+        <form action="Excluir" method="get" id="exc">
+            <input type="button" value="Excluir" onclick="chamarPag('exc')">
+        </form>   
+        <form action="Alterar" method="get" id="alt">
+            <input type="button" value="Alterar" onclick="chamarPag('alt')">            
+        
+            <input type="hidden" id="pag" name="pag" value="0">
+        </form>
+
+    </div>
+
+</body>
+
+</html>
